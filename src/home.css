@@ -1,0 +1,82 @@
+/* App.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+    background-color: #f9f9f9;
+}
+
+li:hover {
+    background-color: #e0e0e0;
+}
+
+.form-container {
+    margin-top: 20px;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.btn-action {
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-action.green {
+    background-color: #4caf50;
+}
+
+.btn-action.green:hover {
+    background-color: #45a049;
+}
+
+.btn-action.blue {
+    background-color: #416cff;
+}
+
+.btn-action.blue:hover {
+    background-color: #0039fd;
+}
+
+
+.btn-action.red {
+    background-color: #e80000;
+}
+
+.btn-action.red:hover {
+    background-color: #ab0101;
+}
+
+table {
+    margin-block: calc(0.83em * 2);
+}
