@@ -11,12 +11,14 @@ function App() {
     const [newVaultPassword, setNewVaultPassword] = useState('');
 
     useEffect(() => {
+        // request GET Vault /vault
         setVaults([{name: "Coffre 1", content: null, id: 1}])
     }, []);
 
     const handleVaultClick = (vault: Vault) => {
         const password = prompt(`Entrez le mot de passe pour le coffre ${vault.name}:`);
         console.log('Mot de passe saisi:', password);
+        // request GET Vault /vault?password=ee&id=1
         setUnlockedVault({
             ...unlockedVault!,
             content: [
@@ -31,6 +33,8 @@ function App() {
             alert('Veuillez remplir tous les champs.');
             return;
         }
+        // request POST Vault /vault
+        // body VaultDTO
         const newVault: Vault = {name: newVaultName, content: null, id: 9};
         setVaults(prevVaults => [...prevVaults, newVault]);
         setNewVaultName('');
@@ -57,14 +61,20 @@ function App() {
     };
 
     const handleEditPassword = (passwordId: number) => {
+        // request PUT /password
+        // body PasswordDTO
         console.log(`Édition du mot de passe avec l'ID ${passwordId}`);
     };
 
     const handleDeletePassword = (passwordId: number) => {
+        // request DELETE /password
+        // body DeletePasswordDTO
         console.log(`Suppression du mot de passe avec l'ID ${passwordId}`);
     };
 
     const addPassword = () => {
+        // request POST /password
+        // body PasswordDTO
         const libelle = prompt('Entrez le libellé du mot de passe:');
         const motDePasse = prompt('Entrez le mot de passe:');
 
@@ -85,11 +95,20 @@ function App() {
         console.log('Vault avec le nouveau mot de passe:', newVault);
     }
 
+    const importVault = () => {
+        // request POST /import
+        // body : Vault
+    }
+
+    const exportVault = () => {
+        // request GET /export?id=
+    }
+
     return (
         <>
             <h1>Mon keepass</h1>
 
-            <button className={"btn-action blue"} onClick={() => null}>
+            <button className={"btn-action blue"} onClick={() => importVault()}>
                 Importer
             </button>
 
@@ -108,7 +127,7 @@ function App() {
                     <button className={"btn-action blue"} onClick={() => addPassword()}>
                         Ajouter
                     </button>
-                    <button className={"btn-action green"} style={{"margin": "15px"}} onClick={() => null}>
+                    <button className={"btn-action green"} style={{"margin": "15px"}} onClick={() => exportVault()}>
                         Exporter
                     </button>
 

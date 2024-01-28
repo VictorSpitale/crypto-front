@@ -5,3 +5,7 @@ export type Vault = {
     name: string;
     content: Password[] | null
 }
+
+export type VaultDTO = Pick<Vault, "name"> & {
+    password: string;
+}
