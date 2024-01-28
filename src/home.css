@@ -50,6 +50,7 @@ input {
     padding: 10px 15px;
     border: none;
     cursor: pointer;
+    margin : 5px;
 }
 
 .btn-action.green {

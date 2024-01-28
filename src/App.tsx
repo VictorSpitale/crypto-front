@@ -89,7 +89,7 @@ function App() {
         <>
             <h1>Mon keepass</h1>
 
-            <button className={"btn-action blue"} style={{"margin": "15px"}} onClick={() => null}>
+            <button className={"btn-action blue"} onClick={() => null}>
                 Importer
             </button>
 
