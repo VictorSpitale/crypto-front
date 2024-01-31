@@ -8,11 +8,18 @@ export type Password = BasePassword & {
     visible: boolean;
 }
 
-type VaultId = {
-    vaultId: number;
+type VaultInformation = {
+    id: number;
+    vaultPassword: string;
 }
 
-export type PasswordDTO = BasePassword & VaultId
+export type PasswordDTO = BasePassword & VaultInformation
 
+export type DeletePasswordDTO = {
+    passwordId: number
+} & VaultInformation
 
-export type DeletePasswordDTO = Pick<Password, "id"> & VaultId
+export type EditPasswordDTO = {
+    passwordId: number,
+    password: string
+} & VaultInformation

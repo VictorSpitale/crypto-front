@@ -6,6 +6,10 @@ export type Vault = {
     content: Password[] | null
 }
 
+export type UnlockedVault = Vault & {
+    password: string;
+}
+
 export type VaultDTO = Pick<Vault, "name"> & {
     password: string;
 }
