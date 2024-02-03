@@ -30,11 +30,11 @@ export default {
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
 
 ## Lancement de l'application 
-1- Récupérer les dépendances :
-'''bash
+1. Récupérer les dépendances :
+```bash
 npm i
-'''
-1- Lancer l'application avec : 
-'''bash
+```
+2. Lancer l'application avec : 
+```bash
 npm run dev
-'''
+```
